@@ -1,0 +1,119 @@
+:root {
+    --color-fondo: #f9f7f2;
+    --color-acento: #e63946;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--color-fondo);
+    overflow-x: hidden;
+}
+
+/* Pantalla de Intro */
+#intro-lluvia {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+    transition: opacity 1s ease-out;
+}
+
+.foto-lluvia {
+    position: absolute;
+    width: 150px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: rotate(-10deg);
+    animation: caer 3s forwards ease-in;
+}
+
+@keyframes caer {
+    0% { transform: translateY(-200px) rotate(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(100vh) rotate(20deg); opacity: 0; }
+}
+
+/* Estilo Polaroid Principal */
+.hidden { display: none !important; }
+
+#contenido-principal {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.galeria-polaroid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.polaroid {
+    background: white;
+    padding: 15px 15px 40px 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: rotate(-3deg);
+    transition: transform 0.3s;
+}
+
+.polaroid:nth-child(even) { transform: rotate(3deg); }
+.polaroid:hover { transform: scale(1.05) rotate(0deg); z-index: 10; }
+
+.polaroid img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.polaroid p {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.mensaje-oculto {
+    display: none;
+    font-size: 0.9rem;
+    color: #ff4757;
+    margin-top: 10px;
+    font-weight: bold;
+    border-top: 1px dashed #ccc;
+    padding-top: 5px;
+}
+
+/* Mensaje y Input */
+.input-group { margin: 20px 0; }
+input { padding: 12px; border-radius: 5px; border: 1px solid #ddd; width: 250px; }
+button { padding: 12px 25px; background: var(--color-acento); color: white; border: none; border-radius: 5px; cursor: pointer; }
+
+@media (max-width: 600px) {
+    .polaroid {
+        width: 80%; /* En celular, la foto ocupa casi todo el ancho */
+        margin: auto;
+    }
+    
+    input {
+        width: 80%; /* El buscador se ajusta al ancho del celular */
+        margin-bottom: 10px;
+    }
+}
+
+.resultado {
+    margin-top: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    min-height: 60px;
+    border: 5px solid var(--color-acento);
+}
