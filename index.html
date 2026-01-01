@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi 2025 contigo ✨</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="intro-lluvia">
+        <h1>Preparando recuerdos...</h1>
+        <div id="contenedor-fotos"></div>
+    </div>
+
+    <main id="contenido-principal" class="hidden">
+        <header>
+            <h1 class="titulo-polaroid">Nuestros Momentos 2025</h1>
+            <p>Un año inolvidable a tu lado</p>
+        </header>
+
+        <section class="galeria-polaroid">
+            <div class="polaroid" onclick="mostrarTexto(this)">
+                <img src="https://github.com/rubiobenitezgael-cloud/fin-de-a-o/blob/main/graduacion.png?raw=true" alt="Momento 1">
+                <p>Mi gran motivación ✨</p>
+                <div class="mensaje-oculto">Este año más que nunca has sido mi mayor motivación para poder lograr mis metas<br>
+                    haciendo que todo esto sea para mi y para ti... 💖
+                </div>
+            </div>
+            <div class="polaroid" onclick="mostrarTexto(this)">
+                <img src="https://github.com/rubiobenitezgael-cloud/fin-de-a-o/blob/main/match%20rojo.png?raw=true" alt="Momento 2">
+                <p>La mejor acompañante 🧑🏻‍🤝‍👩🏽</p>
+                <div class="mensaje-oculto">Desde que llegaste a mi vida tú has sido la mejor acompañante<br>
+                                            estando a mi lado en cualquier momento haciendo que sean los mejores... 🤍
+                </div>
+            </div>
+            <div class="polaroid" onclick="mostrarTexto(this)">
+                <img src="https://github.com/rubiobenitezgael-cloud/fin-de-a-o/blob/main/match%20pijamas.png?raw=true" alt="Momento 3">
+                <p>Mi curita 🩹</p>
+                <div class="mensaje-oculto">En todo momento, especialmente en los malos estás a mi lado<br>
+                                            logrando que olvide lo malo de la situación siendo tú mi curita... ❤️‍🩹
+                </div>
+            </div>
+        </section>
+
+        <section id="mensajes">
+            <h2>❤️Mensaje para ti❤️</h2>
+            <div class="input-group">
+                <input type="text" id="nombreInput" placeholder="Escribe alguno de tus apodos aquí...">
+                <button onclick="revelarMensaje()">Abrir mensaje</button>
+            </div>
+            <div id="mensajeTexto" class="resultado"></div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
